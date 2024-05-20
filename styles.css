@@ -1,0 +1,44 @@
+.container{
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    padding: 10px;
+    margin: auto;
+    width: 400px;
+    height: fit-content;
+    background-color: #7091E6;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn{
+    border-color: black;
+    border-radius: 0px;
+    background-color: #ADBBDA;
+}
+
+.scoreboard{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.scores{
+    display: flex;
+    justify-content: space-around;
+    font-weight: 800;
+}
+
+.results{
+    display: block;
+    margin-top: 10px;
+    border: solid;
+    border-width: 1px;
+    background-color: #F95CA4;
+}

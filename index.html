@@ -4,61 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script>
-      function getComputerChoice() {
-        let number = Math.floor(Math.random() * 3);
-        return getHumanChoice(number);
-      }
-
-      function getHumanChoice(number) {
-        if (number == 0) return "rock";
-        if (number == 1) return "paper";
-        if (number == 2) return "scissors";
-      }
-
-      function playRound(humanC, computerChoice){
-        let humanChoice = humanC.toLowerCase();
-        if (humanChoice === "rock" && computerChoice === "rock") console.log("It's a tie!");
-        if (humanChoice === "rock" && computerChoice === "paper") console.log("You lose! Paper beats Rock.");
-        if (humanChoice === "rock" && computerChoice === "scissors") console.log("You win! Rock beats Scissors.");
-        if (humanChoice === "paper" && computerChoice === "paper") console.log("It's a tie!");
-        if (humanChoice === "paper" && computerChoice === "rock") console.log("You win! Paper beats Rock.");
-        if (humanChoice === "paper" && computerChoice === "scissors") console.log("You lose! Scissors beats Paper.");
-        if (humanChoice === "scissors" && computerChoice === "scissors") console.log("It's a tie!");
-        if (humanChoice === "scissors" && computerChoice === "rock") console.log("You lose! Rock beats Scissors.");
-        if (humanChoice === "scissors" && computerChoice === "paper") console.log("You win! Scissors beats Paper.");
-      }
-
-      function playGame(rounds){
-        let humanScore = 0, computerScore = 0;
-        function playRound(humanC, computerChoice){
-            let humanChoice = humanC.toLowerCase();
-            if (humanChoice === "rock" && computerChoice === "rock") return("It's a tie!");
-            if (humanChoice === "rock" && computerChoice === "paper") return("You lose! Paper beats Rock.");
-            if (humanChoice === "rock" && computerChoice === "scissors") return("You win! Rock beats Scissors.");
-            if (humanChoice === "paper" && computerChoice === "paper") return("It's a tie!");
-            if (humanChoice === "paper" && computerChoice === "rock") return("You win! Paper beats Rock.");
-            if (humanChoice === "paper" && computerChoice === "scissors") return("You lose! Scissors beats Paper.");
-            if (humanChoice === "scissors" && computerChoice === "scissors") return("It's a tie!");
-            if (humanChoice === "scissors" && computerChoice === "rock") return("You lose! Rock beats Scissors.");
-            if (humanChoice === "scissors" && computerChoice === "paper") return("You win! Scissors beats Paper.");
-        };
-
-        for (let i = 0; i < rounds; i++){
-            let humanChoice = prompt("Choose rock, paper or scissors (type 0, 1, or 2): ");
-            let round = playRound(getHumanChoice(humanChoice), getComputerChoice());
-            if (round.includes("win")) humanScore++;
-            if (round.includes("lose")) computerScore++;
-            console.log(round);
-        }
-
-        if (humanScore > computerScore) console.log("You win the game!");
-        else if (computerScore > humanScore)  console.log("You lose the game!");
-        else console.log("It's a tie game!");
-      }
-      
-      playGame(5);
-    </script>
+    <link rel="stylesheet" href="styles.css">
   </head>
-  <body></body>
+  <body>
+    <h1 style="display: flex; justify-content: center; font-weight: 800;">Rock, Paper, Scissors</h1>
+    <div class="container">
+      <div class = "buttons">
+        <button class="btn" id="btn1">Rock</button>
+        <button class = "btn" id = "btn2">Paper</button>
+        <button class = "btn" id = "btn3">Scissors</button>
+      </div>
+      <h2 class="scoreboard">Score:</h2>
+      <div class = "scores">
+        <div id = "player-score">Player: 0</div>
+        <div id = "computer-score">Computer: 0</div>
+      </div>
+      <div class="results" id="holder">
+        
+      </div>
+    </div>
+    
+  </body>
+  <script src="script.js" defer></script>
 </html>
