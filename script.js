@@ -36,6 +36,10 @@ function checkWin(){
     btn1.setAttribute('disabled', '');
     btn2.setAttribute('disabled','');
     btn3.setAttribute('disabled','');
+    const ending = document.createElement("div");
+    ending.textContent = "We have a winner! Refresh the page to play again."
+    ending.style.cssText = "font-size: 40px; margin-top: 20px; display: flex; justify-content: center;";
+    document.body.appendChild(ending);
   }
 }
 
